@@ -1,0 +1,177 @@
+﻿@model SofeDC.Models.Registration
+@{
+    ViewData["Title"] = "注册";
+}
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+<div class="row">
+    <h1 class="text-center">软件研发中心注册信息</h1>
+    <form asp-area="Adm" asp-controller="RegistrationManage" asp-action="Create" method="post" class="form-horizontal">
+        @*-------------------------------------------个人信息-----------------------------------------------*@
+        <div class="row">
+            <h2>个人信息</h2><br />
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="col-sm-9 controls">
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <input asp-for="UserName" placeholder="姓名" class="form-control" required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="col-sm-9 controls">
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <div class="radio">
+                                    <label class="radio-inline">
+                                        @Html.RadioButton("UserSex", "男")
+                                        <i class="fa fa-mars"></i>
+                                    </label>
+                                    <label class="radio-inline">
+                                        @Html.RadioButton("UserSex", "女")
+                                        <i class="fa fa-venus"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        @*-------------------------------------------校园信息-----------------------------------------------*@
+        <div class="row">
+            <h2>校园信息</h2><br />
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="col-sm-9 controls">
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <input asp-for="UserNum" placeholder="您的学号" class="form-control" required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="col-sm-9 controls">
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <input asp-for="UserAcademy" placeholder="所属学院全称" class="form-control" required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="col-sm-9 controls">
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <input asp-for="UserClass" placeholder="专业及班级" class="form-control" required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="col-sm-9 controls">
+                        <div class="row">
+                            <div class="col-xs-9 ">
+                                @Html.DropDownList("UserLable", ViewBag.List as SelectList, "请选择",new { @class="form-control"})
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        @*-------------------------------------------联系方式-----------------------------------------------*@
+        <div class="row">
+            <h2>联系方式</h2><br />
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="col-sm-9 controls">
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <input asp-for="UserPhone" placeholder="电话" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="col-sm-9 controls">
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <input asp-for="UserEmail" placeholder="邮箱" class="form-control" required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="col-sm-9 controls">
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <input asp-for="QQ" placeholder="QQ号码" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="col-sm-9 controls">
+                        <div class="row">
+                            <div class="col-xs-9 ">
+                                <input asp-for="WeChat" placeholder="微信号码" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        @*-------------------------------------------兴趣方向-----------------------------------------------*@
+        <div class="row">
+            <h2>兴趣方向</h2>
+            <br />
+            @foreach (SelectListItem InterstItem in Model.Intersts)
+            {
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <div class="col-sm-9 controls">
+                            <div class="row">
+                                <div class="col-xs-9 ">
+                                    <div class="form-check form-check-inline">
+                                        @{
+                                            var ischecked = "";
+                                            if (InterstItem.Selected)
+                                            {
+                                                ischecked = "checked='checked'";
+                                            }
+                                            <input name="InterstAnrry" type="checkbox" value="@InterstItem.Value" @ischecked />
+                                            @InterstItem.Text
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="row">
+            <input type="submit" value="注册" class="btn btn-primary col-sm-12" />
+        </div>
+    </form>
+</div>
+

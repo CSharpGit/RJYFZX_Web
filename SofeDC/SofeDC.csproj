@@ -1,0 +1,97 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="6.10.5" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore.Design" Version="6.10.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Adm\Data\" />
+    <Folder Include="Areas\Adm\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\bootstrap-fileinput\CHANGE.md" />
+    <None Include="wwwroot\bootstrap-fileinput\js\fileinput.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\fileinput.min.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\ar.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\az.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\bg.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\ca.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\cr.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\cs.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\da.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\de.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\el.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\es.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\et.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\fa.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\fi.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\fr.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\gl.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\hu.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\id.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\it.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\ja.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\ka.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\kr.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\kz.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\LANG.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\lt.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\nl.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\no.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\pl.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\pt-BR.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\pt.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\ro.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\ru.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\sk.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\sl.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\sv.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\th.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\tr.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\uk.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\vi.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\zh-TW.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\locales\zh.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\plugins\piexif.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\plugins\piexif.min.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\plugins\purify.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\plugins\purify.min.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\plugins\sortable.js" />
+    <None Include="wwwroot\bootstrap-fileinput\js\plugins\sortable.min.js" />
+    <None Include="wwwroot\bootstrap-fileinput\LICENSE.md" />
+    <None Include="wwwroot\bootstrap-fileinput\nuget\build.bat" />
+    <None Include="wwwroot\bootstrap-fileinput\nuget\Package.nuspec" />
+    <None Include="wwwroot\bootstrap-fileinput\README.md" />
+    <None Include="wwwroot\bootstrap-fileinput\scss\fileinput-rtl.scss" />
+    <None Include="wwwroot\bootstrap-fileinput\scss\fileinput.scss" />
+    <None Include="wwwroot\bootstrap-fileinput\scss\themes\explorer-fa\theme.scss" />
+    <None Include="wwwroot\bootstrap-fileinput\scss\themes\explorer\theme.scss" />
+    <None Include="wwwroot\bootstrap-fileinput\themes\explorer-fa\theme.js" />
+    <None Include="wwwroot\bootstrap-fileinput\themes\explorer-fa\theme.min.js" />
+    <None Include="wwwroot\bootstrap-fileinput\themes\explorer\theme.js" />
+    <None Include="wwwroot\bootstrap-fileinput\themes\explorer\theme.min.js" />
+    <None Include="wwwroot\bootstrap-fileinput\themes\fa\theme.js" />
+    <None Include="wwwroot\bootstrap-fileinput\themes\fa\theme.min.js" />
+    <None Include="wwwroot\bootstrap-fileinput\themes\gly\theme.js" />
+    <None Include="wwwroot\bootstrap-fileinput\themes\gly\theme.min.js" />
+    <None Include="wwwroot\images\img1.jpg" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4lib_4bootstrap_4_1bower_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

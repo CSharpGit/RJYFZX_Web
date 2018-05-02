@@ -1,0 +1,150 @@
+﻿@model IEnumerable<SofeDC.Models.User>
+@{
+    ViewData["Title"] = "个人信息管理";
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="~/bootstrap-fileinput/js/fileinput.min.js"></script>
+<script type="text/javascript" src="~/bootstrap-fileinput/js/locales/zh.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(function () {
+        var control = $("#txt_file");
+        var uploadrul = "/Home/UploadFile";
+        control.fileinput({
+            language: 'zh', //设置语言
+            uploadUrl: uploadrul, //上传的地址
+            allowedFileExtensions: ['png','jpg'],//接收的文件后缀
+            showUpload: true, //显示批量上传按钮
+            showCaption: false,//是否显示标题
+            browseClass: "btn btn-primary", //按钮样式
+            dropZoneEnabled: true,//是否显示拖拽区域
+            //minImageWidth: 50, //图片的最小宽度
+            //minImageHeight: 50,//图片的最小高度
+            //maxImageWidth: 1000,//图片的最大宽度
+            //maxImageHeight: 1000,//图片的最大高度
+            //maxFileSize: 0,//单位为kb，如果为0表示不限制文件大小
+            //minFileCount: 0,
+            maxFileCount: 100,
+            enctype: 'multipart/form-data',
+            validateInitialCount: true,
+            previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+
+            msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+        });
+        //导入文件上传完成之后的事件
+        $("#txt_file").on("fileuploaded", function (event, data, previewId, index) {
+        });
+    });
+</script>
+
+<div class="row">
+    <h2 class="text-center">个人信息管理</h2>
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-4">
+            <img src="~/Images/img1.jpg" alt="个人照片" />
+            <div>
+                <form asp-area="Adm" asp-controller="PersonalInformationManage" asp-action="Post">
+                    <div>
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">请选择xml文件</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input type="file" name="txt_file" id="txt_file" multiple class="file" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <h3 class="agileits-title">@Html.DisplayNameFor(model => model.PersonalIntroduction)：</h3>
+            <div class="profile-agileinfo">
+                <p>@Html.DisplayFor(modelItem => item.PersonalIntroduction)</p>
+                <div class="clearfix"> </div>
+                <div class="col-md-4 col-xs-4 profile-grids">
+                    <i class="fa fa-user">&nbsp;&nbsp;<b>个人信息：</b></i>
+                    <ul class="address">
+                        <li>
+                            <b>姓名：</b> @Html.DisplayFor(modelItem => item.UserName)
+                        </li>
+                        <li>
+                            <b>性别：</b> @Html.DisplayFor(modelItem => item.UserSex)
+                        </li>
+                        <li>
+                            <b>职位：</b> @Html.DisplayFor(modelItem => item.UserPosition)
+                        </li>
+                        <li>
+                            <b>小组：</b> @Html.DisplayFor(modelItem => item.UserGroup)
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-xs-4 profile-grids">
+                    <i class="fa fa-envelope">&nbsp;&nbsp;<b>联系方式：</b></i>
+                    <ul class="address">
+                        <li><a href="#" class="fa-mobile-phone">&nbsp;&nbsp;@Html.DisplayFor(modelItem => item.UserPhone)</a></li>
+                        <li><a href="#" class="fa fa-qq">&nbsp;&nbsp;@Html.DisplayFor(modelItem => item.QQ)</a></li>
+                        <li><a href="#" class="fa fa-weixin">&nbsp;&nbsp;@Html.DisplayFor(modelItem => item.WeChat)</a></li>
+                        <li><a href="#" class="fa fa-envelope-o fa-fw">&nbsp;&nbsp;@Html.DisplayFor(modelItem => item.UserEmail)</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-xs-4 profile-grids">
+                    <i class="fa fa-graduation-cap">&nbsp;&nbsp;<b>校园信息：</b></i>
+                    <ul class="address">
+                        <li>
+                            <b>学号：</b> @Html.DisplayFor(modelItem => item.UserNum)
+                        </li>
+                        <li>
+                            <b>学院：</b> @Html.DisplayFor(modelItem => item.UserAcademy)
+                        </li>
+                        <li>
+                            <b>班级：</b> @Html.DisplayFor(modelItem => item.UserClass)
+                        </li>
+                        <li>
+                            <b>届级：</b> @Html.DisplayFor(modelItem => item.UserLable)
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+                @if (ViewBag.usStatus == "毕业生")
+                {
+                    switch (ViewBag.SeniorWorkType)
+                    {
+                        case "工作":
+                            <div class="col-sm-6">
+                                <b>@Html.DisplayNameFor(model => model.WorkPlace)：</b>
+                                @Html.DisplayFor(modelItem => item.WorkPlace)
+                            </div>
+                            <div class="col-sm-6">
+                                <b>@Html.DisplayNameFor(model => model.WorkPosition)：</b>
+                                @Html.DisplayFor(modelItem => item.WorkPosition)
+                            </div>
+                            break;
+                        case "学习":
+                            <div class="col-sm-6">
+                                <b>@Html.DisplayNameFor(model => model.University)：</b>
+                                @Html.DisplayFor(modelItem => item.University)
+                            </div>
+                            <div class="col-sm-6">
+                                <b>@Html.DisplayNameFor(model => model.Professional)：</b>
+                                @Html.DisplayFor(modelItem => item.Professional)
+                            </div>
+                            break;
+                        default:
+                            break;
+                    }
+                    <br />
+                    <h3 class="agileits-title">@Html.DisplayNameFor(model => model.Message)：</h3>
+                    <div class="profile-agileinfo">
+                        <p>@Html.DisplayFor(modelItem => item.Message)</p>
+                    </div>
+                }
+
+            </div>
+        </div>
+    }
+</div>
+

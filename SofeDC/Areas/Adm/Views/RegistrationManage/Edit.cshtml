@@ -1,0 +1,115 @@
+﻿@model SofeDC.Models.User
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Adm/Views/Shared/_Layout.cshtml";
+}
+<h2>Edit</h2>
+
+<h4>Registration</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-area="Adm" asp-controller="UserManage" asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="UserNum" class="control-label"></label>
+                <input asp-for="UserNum" class="form-control" />
+                <span asp-validation-for="UserNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassWord" class="control-label"></label>
+                <input asp-for="PassWord" type="text" class="form-control" />
+                <span asp-validation-for="PassWord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserSex" class="control-label"></label>
+                <input asp-for="UserSex" class="form-control" />
+                <span asp-validation-for="UserSex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserAcademy" class="control-label"></label>
+                <input asp-for="UserAcademy" class="form-control" />
+                <span asp-validation-for="UserAcademy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserClass" class="control-label"></label>
+                <input asp-for="UserClass" class="form-control" />
+                <span asp-validation-for="UserClass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserPhone" class="control-label"></label>
+                <input asp-for="UserPhone" class="form-control" />
+                <span asp-validation-for="UserPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QQ" class="control-label"></label>
+                <input asp-for="QQ" class="form-control" />
+                <span asp-validation-for="QQ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeChat" class="control-label"></label>
+                <input asp-for="WeChat" class="form-control" />
+                <span asp-validation-for="WeChat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEmail" class="control-label"></label>
+                <input asp-for="UserEmail" class="form-control" />
+                <span asp-validation-for="UserEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserGroup" class="control-label"></label>
+                <input asp-for="UserGroup" class="form-control" />
+                <span asp-validation-for="UserGroup" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserLable" class="control-label"></label>
+                <input asp-for="UserLable" class="form-control" />
+                <span asp-validation-for="UserLable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserPositionType" class="control-label"></label>
+                @Html.DropDownList("UserPositionType", ViewBag.UserPositionType as SelectList, "请选择", new { @class = "form-control" })
+                <span asp-validation-for="UserPositionType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="UserPosition" class="control-label"></label>
+                @Html.DropDownList("UserPosition", ViewBag.UserPosition as SelectList, "请选择", new { @class = "form-control" })
+                <span asp-validation-for="UserPosition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserStatus" class="control-label"></label>
+                @Html.DropDownList("UserStatus", ViewBag.UserStatus as SelectList, "请选择", new { @class = "form-control" })
+                <span asp-validation-for="UserStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserMaster" class="control-label"></label>
+                <input asp-for="UserMaster" class="form-control" />
+                <span asp-validation-for="UserMaster" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserApprentice" class="control-label"></label>
+                <input asp-for="UserApprentice" class="form-control" />
+                <span asp-validation-for="UserApprentice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

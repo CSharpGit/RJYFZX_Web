@@ -1,0 +1,114 @@
+﻿@model SofeDC.Models.User
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserNum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserNum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserSex)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserSex)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PassWord)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PassWord)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserClass)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserClass)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserAcademy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserAcademy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserGroup)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserGroup)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserPhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserPhone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.QQ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.QQ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WeChat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WeChat)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserPosition)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserPosition)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserStatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserMaster)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserMaster)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserApprentice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserApprentice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserLable)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserLable)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

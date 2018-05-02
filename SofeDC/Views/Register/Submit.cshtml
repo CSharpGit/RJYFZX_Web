@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Submit";
+}
+
+<h2>Submit</h2>
+
+@{
+    if (ViewBag.Hobbies != null)
+    {
+        for (int i = 0; i < ViewBag.Hobbies.Length; i++)
+        {
+            <h2>@ViewBag.Hobbies[i]</h2>
+        }
+    }
+}  

@@ -1,0 +1,11 @@
+F:\test\SofeDC\SofeDC\bin\Debug\netcoreapp2.0\SofeDC.deps.json
+F:\test\SofeDC\SofeDC\bin\Debug\netcoreapp2.0\SofeDC.runtimeconfig.json
+F:\test\SofeDC\SofeDC\bin\Debug\netcoreapp2.0\SofeDC.runtimeconfig.dev.json
+F:\test\SofeDC\SofeDC\bin\Debug\netcoreapp2.0\SofeDC.dll
+F:\test\SofeDC\SofeDC\bin\Debug\netcoreapp2.0\SofeDC.pdb
+F:\test\SofeDC\SofeDC\obj\Debug\netcoreapp2.0\SofeDC.csproj.CoreCompileInputs.cache
+F:\test\SofeDC\SofeDC\obj\Debug\netcoreapp2.0\SofeDC.AssemblyInfoInputs.cache
+F:\test\SofeDC\SofeDC\obj\Debug\netcoreapp2.0\SofeDC.AssemblyInfo.cs
+F:\test\SofeDC\SofeDC\obj\Debug\netcoreapp2.0\SofeDC.dll
+F:\test\SofeDC\SofeDC\obj\Debug\netcoreapp2.0\SofeDC.pdb
+F:\test\SofeDC\SofeDC\obj\Debug\netcoreapp2.0\SofeDC.csprojResolveAssemblyReference.cache

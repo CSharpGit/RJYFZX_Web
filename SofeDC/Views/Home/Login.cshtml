@@ -1,0 +1,38 @@
+﻿@model  SofeDC.Models.User
+@{
+    ViewData["Title"] = "登录";
+}
+
+<style type="text/css">
+    .col-center-block {
+        float: none;
+        background-color: blueviolet;
+        padding:10px 60px 10px 60px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<h3 class="text-center"><a asp-controller="Register" asp-action="Index">没有账号，前往注册</a></h3>
+    <div class="text-center col-xs-6 col-md-4 col-center-block">
+        <form asp-action="Login" method="post">
+            <h1>软件研发中心</h1>
+            <h4>登&nbsp;&nbsp;录</h4>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="UserNum" placeholder="学号" class="form-control" required autofocus/>
+                <span asp-validation-for="UserNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="PassWord" placeholder="密码" class="form-control" required/>
+                <span asp-validation-for="PassWord" class="text-danger"></span>
+            </div>
+            <label>@ViewBag.info</label>
+            <div class="form-group">
+                <input type="submit" style="width:50%" value="登&nbsp;&nbsp;录" class="btn btn-lg btn-primary" />
+            </div><hr />
+            <h3 class="small">忘记了密码？<a asp-controller="Register" asp-action="Index">点这里</a></h3>
+        </form>
+    </div>
+</div>
